@@ -1,5 +1,5 @@
 //---------------------------------------------------------- method-1 ---------------------------------------------------------- 
-function maxChar(n){
+function fizzbuzz(n){
 	const charmap={};
 	let max=0;
 	let maxChar='';
@@ -16,4 +16,4 @@ function maxChar(n){
 	}
 	return maxChar;
 }
-console.log(maxChar("aab111215sfd45454545484b"));
+console.log(fizzbuzz("aab111215sfd45454545484b"));
