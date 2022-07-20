@@ -29,7 +29,7 @@ function maxChar(n){
 	let maxChar='';
 
 	for (let char of n){
-		charmap[char]=charmap[char]+1 || 1; 
+		charmap[char]=charmap[char]+1 || 1; // we use  || 1 -> beacuse the charmap[char]+1 sometimes will be null
 	}
 
 	for(let char in charmap){
