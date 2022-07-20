@@ -1,13 +1,9 @@
 //---------------------------------------------------------- method-1 ---------------------------------------------------------- 
-function chunk(arr,size){
-	const chunked=[];
-	for(let ele of arr){
-		const last=chunked[chunked.length-1];
-		if(!last || last.length===size)
-			chunked.push([ele]);
-		else
-			last.push(ele);
-	}
-	return chunked;
+function word_capitalize(str){
+	const words=[];
+
+	for(let word of str.split(' '))
+			words.push(word[0].toUpperCase()+word.slice(1));
+	return words.join(" ");
 }
-console.log(chunk([1,2,3,4,5,6,7,8],3));
+console.log(word_capitalize('hi! vasu iam sham calling you'));asu'));
