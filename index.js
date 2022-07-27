@@ -1,9 +1,20 @@
-//---------------------------------------------------------- method-1 ---------------------------------------------------------- 
-function steps(str){
-	const words=[];
+function pyramid(n,row=0,level='')
+{
+	const midpoint =Math.floor((2*n-1)/2);
+	if(n===row)
+		return;
+	
+	if(level.length===2*n-1)
+	{
+		console.log(level);
+		return pyramid(n,row+1);
+	}
 
-	for(let word of str.split(' '))
-			words.push(word[0].toUpperCase()+word.slice(1));
-	return words.join(" ");
+	let add;
+	if(midpoint - row <= level.length && midpoint + row >= level.length)
+				add='#';
+	else
+		add=' ';
+	pyramid(n,row,level+add);
 }
-console.log(steps('hi! vasu iam sham calling you'));
+console.log(pyramid(5));
