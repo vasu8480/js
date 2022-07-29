@@ -2,6 +2,7 @@ class HashTable{
 	constructor(size){
 		this.data = new Array(size);
 	}
+
 	_hash(key){
 		let hash = 0;
 		for(let i = 0; i < key.length; i++){
@@ -9,6 +10,7 @@ class HashTable{
 		}
 		return hash;
 	}
+
 	set(key,value){
 	let address = this._hash(key);
 	if(!this.data[address]){
@@ -19,6 +21,7 @@ class HashTable{
 	this.data[address].push([key,value]);
 	return this.data;
 	}
+
 	get(key){
 	let address	= this._hash(key);
 	const currentBucket = this.data[address];
@@ -28,10 +31,23 @@ class HashTable{
 				return currentBucket[i][1];
 			}
 		}
+		}
+	return undefined;
+	}	
+
+	keys(){
+		let keys = [];
+		for(let i = 0; i < this.data.length; i++){
+			if(this.data[i]){
+				keys.push(this.data[i][0][0]);
+			}
+		}
+		return keys;
 	}
-return undefined;
-}
 }
 const hashTable = new HashTable(50);
 hashTable.set('greeting', 1000);
+hashTable.set('John',251)
+hashTable.set('vasu',14);
 hashTable.get('greeting');
+hashTable.keys();
