@@ -36,8 +36,10 @@ console.log(newArray.push('Hello'));
 console.log(newArray.push('World'));
 console.log(newArray.pop());
 console.log(newArray.delete(0));
+console.log(newArray.push('rav'));
+console.log(newArray.push('vasu'));
 console.log(newArray.get(0));
-console.log(newArray.get(1));
+console.log(newArray.push(1));
 console.log(newArray.length);
 console.log(newArray.data);
 
