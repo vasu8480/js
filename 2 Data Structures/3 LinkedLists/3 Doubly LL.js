@@ -50,10 +50,12 @@ insert(index, value){
 	const leader = this.traverseToIndex(index - 1);
 	const follower = leader.next;
 	leader.next = newNode;
-	newNode
+	newNode.pre = leader;
 	newNode.next = follower;
+	follower.prev = newNode;
 	this.length++;
-	return this;
+	console.log(this);
+	return this.printList();
 }
 traverseToIndex(index){
 	let counter = 0;
@@ -64,18 +66,11 @@ traverseToIndex(index){
 	}
 	return currentNode;
 }
-remove(index){
-	const leader = this.traverseToIndex(index - 1);
-	const unwantedNode = leader.next;
-	leader.next = unwantedNode.next;
-	this.length--;
-	return this;
-}
 }
 const myLinkedList = new Doubly_LinkedList(10);
 myLinkedList.append(45);
 myLinkedList.append(16)
 myLinkedList.prepend(5);
 myLinkedList.printList();
-myLinkedList.insert(2,152);
+myLinkedList.insert(1,152);
 console.log(myLinkedList);
