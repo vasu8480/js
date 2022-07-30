@@ -65,9 +65,11 @@ class LinkedList{
 		return this;
 	}
 }
-const myLinkedList = new LinkedList(10);
+const myLinkedList = new Doubly_LinkedList(10);
 myLinkedList.append(5);
 myLinkedList.append(16);
 myLinkedList.printList();
 myLinkedList.insert(1, 99);
+myLinkedList.remove(1);
+myLinkedList.printList();
 console.log(myLinkedList);
