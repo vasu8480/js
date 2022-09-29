@@ -1,27 +1,26 @@
 // LRU Cache
 
 class LRU{
-	constructor(max=5){
+	constructor(max = 4){
 		this.max = max;
-		this.cache = new Map();
+		this.cache = new Map(); // data structure
 	}
 	set(key, value){
-		if(this.cache.has(key)) this.cache.delete(key);
-		
-		else if (this.cache.size === this.max){
-			this.cache.delete(this.first());
+		if(this.cache.has(key)) this.cache.delete(key); //delete if already exists
+		else if (this.cache.size === this.max){ // if cache is full
+			this.cache.delete(this.first());      // delete first item if max reached
 		}
-		this.cache.set(key, value);
+		this.cache.set(key, value); // add new item
 	}
-	first(){
-		return this.cache.keys().next().value;
+	first(){ // get first key
+		return this.cache.keys().next().value; // return first key
 	}
 	get(key){
-		if(this.cache.has(key)){
-			let value = this.cache.get(key);
-			this.cache.delete(key);
-			this.cache.set(key, value);
-			return value;
+		if(this.cache.has(key)){ // if key exists
+			let value = this.cache.get(key); // get value
+			this.cache.delete(key);	// delete key
+			this.cache.set(key, value);	// add key to end
+			return value;	// return value
 		}
 	}
 }
