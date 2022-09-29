@@ -8,3 +8,28 @@ function a(){
 	}
 }
 a();
+
+//set timeout with var using closures
+function b(){
+	for(var i=0;i<3;i++){
+		(function log(i){
+			setTimeout(function(){
+				console.log(i);
+			},i*1000);
+		})(i);
+	}
+}
+b();
+
+//set timeout with let using closures
+function d(){
+	for(let i=0;i<3;i++){
+		(function log(i){
+			setTimeout(function(){
+				console.log(i);
+			},i*1000);
+		})(i);
+	}
+}
+d();
+
