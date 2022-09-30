@@ -12,3 +12,22 @@ promise.then((res) => {
 });
 
 console.log("end");  //sync
+
+
+//------------------------------------------------- question 2 -------------------------------------------------
+// start middle  1   end   success
+console.log("start");
+const fn =()=>
+	new Promise((resolve, reject) => {
+		console.log(1);			//sync
+		resolve("success");
+	});
+
+	console.log("middle");
+
+	fn().then((res) => {
+		console.log(res);	//async
+	});
+	console.log("end");  //sync
+
+	//
