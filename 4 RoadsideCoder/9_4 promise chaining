@@ -1,0 +1,14 @@
+// output will be : First promise
+
+const firstPromise = new Promise((resolve, reject) => {
+	resolve('first promise');
+});
+
+const SecondPromise = new Promise((resolve, reject) => {
+	resolve(firstPromise);
+});
+
+SecondPromise.then((data) => {
+		return data;
+})
+.then((data) => console.log(data));
